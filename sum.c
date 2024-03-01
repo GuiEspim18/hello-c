@@ -8,7 +8,7 @@ int main() {
     scanf("%d", &value1);
 
     printf("Digite outro valor: ");
-    scanf("%d", &value2)
+    scanf("%d", &value2);
 
     int result = value1 + value2;
 
