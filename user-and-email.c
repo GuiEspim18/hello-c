@@ -2,7 +2,8 @@
 #include <string.h>
 
 
-void cleanBuffer(char c) {
+void cleanBuffer() {
+    char c;
     while((c = getchar()) != '\n' && c != EOF);
 }
 
@@ -11,14 +12,12 @@ int main() {
     char email[50] ;
     char password[50] ;
 
-    // variable to clean buffer
-    char c;
 
     printf("Digite o seu email: ");
     scanf("%49[^\n]", email);
 
     // cleaning buffer
-    cleanBuffer(c);
+    cleanBuffer();
 
     printf("Digite a sua senha: ");
     scanf("%49[^\n]", password);
