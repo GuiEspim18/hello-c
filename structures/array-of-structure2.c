@@ -14,10 +14,11 @@ void clearBuffer() {
     while ((c = getchar()) != '\n' && c != EOF);
 }
 
-char scan(char title[10], int size) {
+char* scan(char title[10], int size) {
     printf("%s: ", title);
-    char variable[size];
+    static char variable[100]; // Definindo um tamanho fixo para o array
     scanf("%99[^\n]", variable);
+    clearBuffer();
     return variable;
 }
 
@@ -28,19 +29,15 @@ int main() {
     for (;;) {
         char stop;
 
-        char brand = scan("Marca", 100);
-            clearBuffer();
-        char model = scan("Modelo", 100);
-            clearBuffer();
-        char price = scan("Preço", 10);
-            clearBuffer();
+        char *brand = scan("Marca", 100); // Alterado para char*
+        char *model = scan("Modelo", 100); // Alterado para char*
+        char *price = scan("Preço", 10); // Alterado para char*
 
-        printf(brand);
-        printf(model);
-        printf(price);
+        printf("%s\n", brand); // Corrigido para imprimir corretamente
+        printf("%s\n", model); // Corrigido para imprimir corretamente
+        printf("%s\n", price); // Corrigido para imprimir corretamente
 
         break;
-        
     }
 
     return 0;
